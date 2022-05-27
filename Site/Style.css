@@ -1,0 +1,385 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;700&family=Inconsolata&family=Inter&family=PT+Sans:wght@400;700&family=Poppins:wght@400;700&family=Ubuntu:wght@300&display=swap');
+
+/* Index */
+
+/* header */
+body {
+    background-color: #F5F5DC;
+    margin: 0;
+}
+
+.header {
+    background-color: #D2B48C;
+    height: 120px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 3px solid #D2B48C;
+}
+
+.container {
+    width: max-content;
+    height: max-content;
+    display: flex;
+    margin: auto;
+    justify-content: space-between;
+    width: 80%;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.logo {
+
+    height: 120px;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 50px;
+}
+
+.header ul .aqui {
+    font-weight: 500px;
+
+}
+
+.nav {
+
+    color: #000;
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+    width: 70%;
+    padding: 0;
+    justify-items: end;
+    font-size: 14px;
+    margin: auto;
+    margin-right: 0px;
+    font-family: 'Poppins';
+    font-weight: 700;
+
+}
+
+
+.nav a {
+    margin: auto;
+    align-self: center;
+    align-items: center;
+    text-decoration: none;
+    color: #000;
+    cursor: pointer;
+
+}
+
+.nav li {
+    height: auto;
+    align-self: center;
+}
+
+.lisobre {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    align-items: center;
+}
+
+.ulsobre {
+    top: 15px;
+    list-style: none;
+    padding: 20px;
+    background-color: #D2B48C;
+    display: none;
+    position: absolute;
+    text-align: center;
+}
+
+.lisobre:hover .ulsobre {
+    display: block;
+}
+
+.ulsobre:hover {
+    display: block;
+}
+
+.ulsobre li {
+    padding: 10px;
+}
+
+.cadastro {
+    padding-top: 9px;
+    padding-bottom: 9px;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: #D2B48C;
+    color: #000;
+    border: solid #000 3px;
+    font-family: 'Poppins';
+    font-weight: bold;
+    font-size: 16px;
+    align-items: center;
+    justify-content: space-evenly;
+    cursor: pointer;
+
+
+}
+
+.login {
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 30px;
+    padding-right: 30px;
+    background-color: #D2B48C;
+    color: #000;
+    border: solid #000 3px;
+    font-family: 'Poppins';
+    font-weight: bold;
+    font-size: 16px;
+    align-items: center;
+    justify-content: space-evenly;
+    cursor: pointer;
+
+
+
+}
+/* Sobre o Projeto */
+.img_projeto{
+    border-radius: 60px;
+    width: 300px;
+    height: auto;
+}
+.texto_projeto{
+    text-align: center;
+    width: 650px;
+    margin-left: 80px;
+    margin-top: 100px;
+    
+}
+.texto_projeto h2{
+    font-family: 'Poppins';
+    font-weight: 400;
+    font-size: 16px;
+}
+.titulo {
+    font-family: 'Poppins';
+    text-align: center;
+    margin-top: 20px;
+    width: 100%;
+    height: 10vh;
+    
+}
+.sobreprojeto{
+    display: flex;
+    margin-top: 50px;
+}
+
+/* final sobre o porojeto */
+
+
+/* contato */
+.contato {
+    display: flex;
+    flex-direction: column;
+    background-color: #D2B48C;
+    margin-top: 100px;
+}
+
+.contato .container {
+    flex-direction: column;
+}
+
+.img_contato {
+   
+    justify-content: flex-start;
+    align-content: flex-start;
+    margin-left: 250px;
+    font-size: 0;
+    width: 100px;
+    height: 100px;
+    display: inline-block;
+   
+}
+
+.blocoContato {
+    /* display: flex;
+    flex-direction: column; */
+    justify-content: space-between;
+    justify-content: flex-end;
+
+    margin-left: 80px;
+    /* width: 10%; */
+    width: 300px;
+    height: 500px;
+    display: inline-block;
+}
+
+.texto {
+    justify-content: center;
+    text-align: center;
+    margin-top: 20px;
+    font-family: 'Poppins';
+    margin-left: 70px;
+
+}
+
+
+.contato h2 {
+    font-family: 'PT Sans';
+    font-weight: 700;
+    font-size: 24px;
+}
+
+.contato h3 {
+    font-family: 'Poppins';
+    font-weight: 400;
+    font-size: 16px;
+}
+
+/* fim contato */
+/* final da index */
+
+/* Login */
+.body_login {
+    background-image: url("https://images5.alphacoders.com/389/thumb-1920-389873.jpg");
+    background-size: cover;
+    overflow-x: hidden;
+    height: 100%;
+    width: 100%;
+    
+}
+
+.card {
+
+    background-color: #D2B48C;
+    justify-content: center;
+    align-items: center;
+    border-radius: 56px;
+    height: 550px;
+    margin-top: 500px;
+    width: 476px;
+}
+.formulario h2{
+    margin-top: 60px;
+    font-family: 'Poppins';
+}
+.tipo_campo{
+    margin-top: 20px;
+    font-family: 'Poppins';
+    margin-top: 55px;
+}
+.input {
+
+    border-radius: 20px;
+    width: 300px;
+    height: 30px;
+  
+}
+.card .login{
+    margin-top: 100px;
+}
+
+.formulario {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* fim do login */
+
+/* Cadastro */
+.body_cadastro {
+    background-image: url("https://images5.alphacoders.com/389/thumb-1920-389873.jpg");
+    background-size: cover;
+    overflow-x: hidden;
+    height: 100%;
+    width: 100%;
+    
+}
+.card_cadastro {
+
+    background-color: #D2B48C;
+    justify-content: center;
+    align-items: center;
+    border-radius: 56px;
+    height:900px;
+    margin-top: 500px;
+    width: 476px;
+}
+
+.card_cadastro .cadastro{
+    margin-top: 200px;
+}
+
+/* fim do cadastro*/
+
+
+/* Banner */
+
+.bannerHome {
+    background-image: url("img/banner.jpg");
+    height: 85vh;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+}
+
+.bannerHome .container {
+    height: 85vh;
+    align-items: center;
+    
+}
+
+.slogan {
+    width: 70%;
+    margin: 0;
+    margin-top: 160px;
+    margin-left: 3px;
+    margin-bottom: 100px;
+    margin-right: 100px;
+    color: #FFFFFF;
+    font-size: 55px;
+    font-family: 'PT Sans';
+    width: auto;
+}
+
+.slogan .container {
+    display: flex;
+
+
+}
+
+/* final banner */
+
+
+
+
+/* fotter */
+.footer {
+    height: 15vh;
+    width: 100%;
+    background-color: #D2B48C;
+    display: flex;
+    margin-top: 550px;
+
+}
+
+.footer .container {
+    justify-content: center;
+    align-items: center;
+}
+
+.footer p {
+    font-family: 'Poppins';
+    font-weight: 400;
+    color: #000;
+}
+
+ul {
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+}
