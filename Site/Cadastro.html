@@ -9,6 +9,10 @@
 
     <link rel="stylesheet" href="Style.css">
     <link rel="icon" href="img/logo oficial.png">
+
+    <!-- <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="sweetalert2.all.min.js"></script> -->
+
 </head>
 
 <body class="body_cadastro">
@@ -21,7 +25,7 @@
             <a href="Index.html"><img class="logo" src="img/logo oficial.png"></a>
         </div>
         <div class="nav">
-            <ul class="nav" >
+            <ul class="nav">
                 <li class="lisobre"><a>Sobre</a>
                     <ul class="ulsobre">
                         <li> <a href="#sobreprojeto">Sobre o Projeto</a></li>
@@ -37,22 +41,24 @@
     </div>
     <div class="container">
         <div class="card_cadastro">
-          
+
             <div class="formulario">
                 <h2> Bem vindo caro leitor!</h2>
+
                 <span class="tipo_campo">Nome:</span>
-                <input class="input" >
+                <input class="input" id="ipt_nome">
+
                 <span class="tipo_campo">Data de Nascimento:</span>
-                <input class="input" type="date" >
+                <input class="input" id="ipt_dataNacs" type="date">
 
                 <span class="tipo_campo">E-mail:</span>
-                <input class="input" type="email">
+                <input class="input" id="ipt_email" type="email">
 
                 <span class="tipo_campo">Senha:</span>
-                <input class="input" type="password" >
+                <input class="input" id="ipt_senha" type="password">
 
                 <span class="tipo_campo">Confirmação de Senha:</span>
-                <input class="input" type="password" >
+                <input class="input" id="ipt_confirmacao" type="password">
 
                 <button class="login" onclick="entrar()">Cadastrar</button>
 
@@ -62,7 +68,7 @@
 
 
 
-    
+
 
     <div class="footer">
         <div class="container">
@@ -73,3 +79,64 @@
 </body>
 
 </html>
+
+<script>
+
+    var nome = ipt_nome.value;
+    var email = ipt_email.value;
+    var dataNacs = ipt_dataNacs.value;
+    var senha = ipt_senha.value;
+    var confirmacao = ipt_confirmacao.value;
+    var validacao = true;
+
+
+    function entrar() {
+
+        if (nome == '' || email == '' || dataNacs == '' || senha == '' || confirmacao == '') {
+
+            alert('erro');
+            // Swal.fire({
+            //     icon: 'error',
+            //     title: 'Cadastro falhou!',
+            //     text: 'Você precisa preencher todos os campos para prosseguir'});
+           
+        }
+        else if (senha != confirmacao) {
+            alert('erro senha');
+
+            // Swal.fire({
+            //     icon: 'error',
+            //     title: 'Cadastro falhou!',
+            //     text: 'As senhas não coencidem'
+            // });
+
+            
+        }
+
+
+
+        else if (email.indexOf("@") == -1 || email.indexOf(".") == -1) {
+
+            alert('erro email');
+            // Swal.fire({
+            //     icon: 'error',
+            //     title: 'Cadastro falhou!',
+            //     text: 'E-mail inválido'
+            // });
+            
+        }
+
+
+       else {
+        alert('sucesso'); 
+        // Swal.fire({
+        //                 title: 'Tudo Certo!',
+        //                 html: 'Cadastro realizado com sucesso!',
+        //                 icon: 'success',
+        //                 footer: '<a href="login.html">Fazer Login</a>',
+        //                 timer: 7000
+        //             });
+       }
+    }
+
+</script>
