@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=S, initial-scale=1.0">
+    <title>Cadastro</title>
+
+    <link rel="stylesheet" href="css/Style.css">
+    <link rel="icon" href="assets/img/logo_oficial.png">
+
+    <!-- <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="sweetalert2.all.min.js"></script> -->
+
+</head>
+
+<body class="body_cadastro">
+
+
+
+
+    <div class="header">
+        <div class="header_img">
+            <a href="Index.html"><img class="logo" src="assets/img/logo_oficial.png"></a>
+        </div>
+        <div class="nav">
+            <ul class="nav">
+                <li class="lisobre"><a>Sobre</a>
+                    <ul class="ulsobre">
+                        <li> <a href="#sobreprojeto">Sobre o Projeto</a></li>
+                        <li> <a href="#sobremim">Sobre Mim</a></li>
+
+                    </ul>
+                </li>
+                <li> <a href="#contato3"><button class="contato2">Contato</button></a></li>
+                <li><a href="Login.html"><button class="login">Entrar</button></a></li>
+                <li><a href="Cadastro.html"><button class="cadastro">Cadastrar-se</button></a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="container">
+        <div class="card_cadastro">
+
+            <div class="formulario">
+                <h2> Bem vindo caro leitor!</h2>
+
+                <span class="tipo_campo">Nome:</span>
+                <input class="input" id="ipt_nome">
+
+                <span class="tipo_campo">Data de Nascimento:</span>
+                <input class="input" id="ipt_data" type="date">
+
+                <span class="tipo_campo">E-mail:</span>
+                <input class="input" id="ipt_email" type="email">
+
+                <span class="tipo_campo">Senha:</span>
+                <input class="input" id="ipt_senha" type="password">
+
+                <span class="tipo_campo">Confirmação de Senha:</span>
+                <input class="input" id="ipt_confirmacao" type="password">
+
+              <a href="Login.html">  <button class="cadastro-entra" onclick="cadastrar()">Cadastrar</button></a>
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <div class="footer">
+        <div class="container">
+            <p> Copyright &copy Onde Upon Time | Todos os direitos reservados 2022.</p>
+        </div>
+    </div>
+
+</body>
+
+</html>
+
+<script>
+
+    // var nome = ipt_nome.value;
+    // var email = ipt_email.value;
+    // var  = ipt_.value;
+    // var senha = ipt_senha.value;
+    // var confirmacao = ipt_confirmacao.value;
+    // var validacao = true;
+
+
+    // function entrar() {
+
+    //     if (nome == '' || email == '' ||  == '' || senha == '' || confirmacao == '') {
+
+    //         alert('erro');
+    //         // Swal.fire({
+    //         //     icon: 'error',
+    //         //     title: 'Cadastro falhou!',
+    //         //     text: 'Você precisa preencher todos os campos para prosseguir'});
+
+    //     }
+    //     else if (senha != confirmacao) {
+    //         alert('erro senha');
+
+    //         // Swal.fire({
+    //         //     icon: 'error',
+    //         //     title: 'Cadastro falhou!',
+    //         //     text: 'As senhas não coencidem'
+    //         // });
+
+
+    //     }
+
+
+
+    //     else if (email.indexOf("@") == -1 || email.indexOf(".") == -1) {
+
+    //         alert('erro email');
+    //         // Swal.fire({
+    //         //     icon: 'error',
+    //         //     title: 'Cadastro falhou!',
+    //         //     text: 'E-mail inválido'
+    //         // });
+
+    //     }
+
+
+    //    else {
+    //     alert('sucesso'); 
+    //     // Swal.fire({
+    //     //                 title: 'Tudo Certo!',
+    //     //                 html: 'Cadastro realizado com sucesso!',
+    //     //                 icon: 'success',
+    //     //                 footer: '<a href="login.html">Fazer Login</a>',
+    //     //                 timer: 7000
+    //     //             });
+    //    }
+
+
+    function cadastrar() {
+        // aguardar();
+
+        //Recupere o valor da nova input pelo nome do id
+        // Agora vá para o método fetch logo abaixo
+        var nomeVar = ipt_nome.value;
+        var emailVar = ipt_email.value;
+        var senhaVar = ipt_senha.value;
+        var confirmacaoSenhaVar = ipt_confirmacao.value;
+        var dataNacsVar= ipt_data.value;
+
+        console.log(nomeVar,emailVar,senhaVar);
+        if (nomeVar == "" || emailVar == "" || senhaVar == "" || confirmacaoSenhaVar == "" || dataNacsVar == '') {
+            /* cardErro.style.display = "block" */
+            alert('Mensagem de erro para todos os campos em branco');
+
+            // finalizarAguardar();
+            return false;
+        }
+        else if (senhaVar != confirmacaoSenhaVar) {
+            alert('erro senha');
+            // finalizarAguardar();
+            return false;
+        }
+        else if (emailVar.indexOf("@") == -1 || emailVar.indexOf(".") == -1) {
+            alert('erro email')
+            // finalizarAguardar();
+            return false;
+        }
+
+       /*  else {
+            setInterval(sumirMensagem, 5000)
+        } */
+
+        // Enviando o valor da nova input
+        fetch("/usuarios/cadastrar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/usuario.js
+                nomeServer: nomeVar,
+                emailServer: emailVar,
+                senhaServer: senhaVar,
+                dataNacsServer:dataNacsVar
+            })
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+        
+
+            if (resposta.ok) {
+               /*  cardErro.style.display = "block"; */
+
+                mensagem_erro.innerHTML = "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+
+                setTimeout(() => {
+                    window.location = "login.html";
+                }, "2000")
+
+                limparFormulario();
+                // finalizarAguardar();
+            } else {
+                throw ("Houve um erro ao tentar realizar o cadastro!");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+            // finalizarAguardar();
+        });
+
+        return false;
+    }
+
+/*     function sumirMensagem() {
+         cardErro.style.display = "none" 
+    }
+ */
+</script>
+}
+
+</script>

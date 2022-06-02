@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+
+    <link rel="stylesheet" href="css/Style.css">
+    <link rel="icon" href="assets/img/logo_oficial.png">
+</head>
+
+<body class="body_login">
+    <div class="header">
+        <div class="header_img">
+            <a href="Index.html"><img class="logo" src="assets/img/logo_oficial.png"></a>
+        </div>
+        <div class="nav">
+            <ul class="nav">
+                <li class="lisobre"><a>Sobre</a>
+                    <ul class="ulsobre">
+                        <li> <a href="#sobreprojeto">Sobre o Projeto</a></li>
+                        <li> <a href="#sobremim">Sobre Mim</a></li>
+
+                    </ul>
+                </li>
+                <li> <a href="#contato3"><button class="contato2">Contato</button></a></li>
+                <li><a href="Login.html"><button class="login">Entrar</button></a></li>
+                <li><a href="Cadastro.html"><button class="cadastro">Cadastrar-se</button></a></li>
+            </ul>
+        </div>
+    </div>
+    
+        <div class="container">
+            <div class="card">
+              
+                <div class="formulario">
+                    <h2>Olá de volta caro leitor!</h2>
+
+                    <span class="tipo_campo">E-mail:</span>
+                    <input class="input" type="text" placeholder="Login">
+
+                    <span class="tipo_campo">Senha:</span>
+                    <input class="input" type="password" placeholder="******">
+
+                    <button class="login" onclick="entrar()">Entrar</button>
+
+                </div>
+            </div>
+        </div>
+
+    
+
+    <div class="footer">
+        <div class="container">
+            <p> Copyright &copy Onde Upon Time | Todos os direitos reservados 2022.</p>
+        </div>
+    </div>
+</body>
+
+</html>
+<script>
+
+
+    function entrar() {
+        aguardar();
+
+        var emailVar = email_input.value;
+        var senhaVar = senha_input.value;
+
+        if (emailVar == "" || senhaVar == "") {
+            cardErro.style.display = "block"
+            mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
+            // finalizarAguardar();
+            return false;
+        }
+        else {
+            setInterval(sumirMensagem, 5000)
+        }
+
+        console.log("FORM LOGIN: ", emailVar);
+        console.log("FORM SENHA: ", senhaVar);
+
+        fetch("/usuarios/autenticar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                emailServer: emailVar,
+                senhaServer: senhaVar
+            })
+        }).then(function (resposta) {
+            console.log("ESTOU NO THEN DO entrar()!")
+
+            if (resposta.ok) {
+                console.log(resposta);
+
+                resposta.json().then(json => {
+                    console.log(json);
+                    console.log(JSON.stringify(json));
+
+                    sessionStorage.EMAIL_USUARIO = json.email;
+                    sessionStorage.NOME_USUARIO = json.nome;
+                    sessionStorage.ID_USUARIO = json.id;
+
+                    setTimeout(function () {
+                        window.location = "./dashboard/cards.html";
+                    }, 1000); // apenas para exibir o loading
+
+                });
+
+            } else {
+
+                console.log("Houve um erro ao tentar realizar o login!");
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+                    // finalizarAguardar(texto);
+                });
+            }
+
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+
+        return false;
+    }
+
+    function sumirMensagem() {
+        cardErro.style.display = "none"
+    }
+
+</script>
