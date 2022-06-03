@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tela Inicial</title>
+    <link rel="stylesheet" href="css/Style.css">
+    <link rel="icon" href="assets/img/logo_oficial.png">
+</head>
+<body>
+    <body >
+        <div class="header">
+            <div class="header_img">
+                <a href="Index.html"><img class="logo" src="assets/img/logo_oficial.png"></a>
+            </div>
+            <div class="nav">
+                <ul class="nav">
+                    <li class="lisobre"><a>Sobre</a>
+                        <ul class="ulsobre">
+                            <li> <a href="#sobreprojeto">Sobre o Projeto</a></li>
+                            <li> <a href="#sobremim">Sobre Mim</a></li>
+    
+                        </ul>
+                    </li>
+                    <li> <a href="#contato3"><button class="contato2">Contato</button></a></li>
+                    <li><a href="Login.html"><button class="login">Entrar</button></a></li>
+                    <li><a href="Cadastro.html"><button class="cadastro">Cadastrar-se</button></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="container" >
+            <div class="card_cadastro" >
+    
+                <div class="formulario">
+                    <h2> Cadastre seu livro aqui!</h2>
+    
+                    <span class="tipo_campo">Nome do Livro:</span>
+                    <input class="input" id="ipt_nome_livro">
+    
+                    <span class="tipo_campo">Data de Lancamento:</span>
+                    <input class="input" id="ipt_data_de_lancamento" type="date">
+    
+                    <span class="tipo_campo">Autor:</span>
+                    <input class="input" id="ipt_autor" >
+    
+                    <span class="tipo_campo">Editora:</span>
+                    <input class="input" id="ipt_editora" >
+    
+                   
+    
+                  <a href="Login.html">  <button class="cadastro-entra" onclick="cadastrar_principal()">Cadastrar</button></a>
+    
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="footer">
+            <div class="container">
+                <p> Copyright &copy Onde Upon Time | Todos os direitos reservados 2022.</p>
+            </div>
+        </div>
+    
+</body>
+</html>
+<script>
+
+    
+    function cadastrar() {
+       
+        var nomeLivro =ipt_nome_livro.value;
+        var dataLancamento = ipt_data_de_lancamento.value;
+        var autor = ipt_autor.value;
+        var editora = ipt_editora.value;
+
+        
+  
+
+        fetch("/livros", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/usuario.js
+                nomeLivroServer: nomeLivro,
+                dataLancamentoServer: dataLancamento,
+                autorServer: autor,
+                editoraServer:editora
+            })
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+        
+
+            if (resposta.ok) {
+               /*  cardErro.style.display = "block"; */
+                
+                // finalizarAguardar();
+            } else {
+                throw ("Houve um erro ao tentar realizar o cadastro!");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+            // finalizarAguardar();
+        });
+
+        return false;
+    }
+</script>

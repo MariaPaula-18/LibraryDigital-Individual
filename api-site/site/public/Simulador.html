@@ -1,12 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Simulador</title>
+    <link rel="stylesheet" href="css/Style.css">
+    <link rel="icon" href="assets/img/logo_oficial.png">
+
 </head>
+
 <body>
-    
-</body>
+
+    <body>
+        <div class="header">
+            <div class="header_img">
+                <a href="Index.html"><img class="logo" src="assets/img/logo_oficial.png"></a>
+            </div>
+            <div class="nav">
+                <ul class="nav">
+                    <li class="lisobre"><a>Sobre</a>
+                        <ul class="ulsobre">
+                            <li> <a href="#sobreprojeto">Sobre o Projeto</a></li>
+                            <li> <a href="#sobremim">Sobre Mim</a></li>
+
+                        </ul>
+                    </li>
+                    <li> <a href="#contato3"><button class="contato2">Contato</button></a></li>
+                    <li><a href="Login.html"><button class="login">Entrar</button></a></li>
+                    <li><a href="Cadastro.html"><button class="cadastro">Cadastrar-se</button></a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="titulo">
+            <h1>Calcule aqui quanto tempo você precisa para ler seu livro</h1>
+        </div>
+
+        <div class="container">
+            <div class="card">
+                <div class="formulario_Calculadora">
+                    <span class="tipo_campo">Insira o nome do livro: </span>
+                    <input class="input" id="ipt_livro">
+                    <span class="tipo_campo">  Insira a quantidade de páginas que tem o Livro: </span>
+                   <input class="input" id="ipt_pag" type="number">
+                   <span class="tipo_campo">  Insira em quanto dias você que ler ele: </span>
+                  <input id="ipt_tempo" class="input">
+                    <div class="botoes_direcao">
+                        <button class="botaoCalcular" onclick="registrar()">Registrar</button>
+                        <button class="botaoCalcular" onclick="mostrar()">Mostrar</button>
+                    </div>
+                    <div id="div_mgs" style="display: none;"></div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="footer">
+            <div class="container">
+                <p> Copyright &copy Onde Upon Time | Todos os direitos reservados 2022.</p>
+            </div>
+        </div>
+
+    </body>
+
 </html>
+<script>
+    var livros = [];
+
+    function registrar() {
+        var livro = ipt_livro.value;
+        var pag = ipt_pag.value;
+        var tempo = ipt_tempo.value;
+        var conta = 0;
+
+        livros.push(livro);
+
+        if (livro == '' || pag == '' || tempo == '') {
+            alert('ERRO - Digite alguma coisa');
+        } else {
+
+            if (tempo <= 7) {
+                if (pag <= 100) {
+                    conta = pag / tempo;
+                }
+                else if (pag > 100 && pag <= 600) {
+                    conta = pag / tempo;
+                }
+                else if (pag > 600) {
+                    conta = pag / tempo;
+                }
+            }
+            else if (tempo) {
+
+            }
+        }
+    }
+
+
+</script>

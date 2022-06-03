@@ -464,7 +464,7 @@ body {
 /* Banner */
 
 .bannerHome {
-    background-image: url(/assets/img/banner.jpg);
+    background-image: url(/site/public/assets/img/banner.jpg);
     height: 85vh;
     width: 100%;
     background-size: cover;
@@ -532,3 +532,50 @@ ul {
     margin-inline-end: 0px;
     padding-inline-start: 40px;
 }
+
+/* Simulador */
+#div_mgs{
+   width: 30px;
+   height: 20px;
+
+}
+.botoes_direcao{
+display: flex;
+flex-direction: row;
+}
+.botaoCalcular{
+    width: 150px;
+    height: 40px;
+    background-color: #D2B48C;
+    color: #000;
+    border: solid #000 3px;
+    font-family: 'Poppins';
+    font-weight: bold;
+    font-size: 16px;
+    align-items: center;
+    justify-content: space-evenly;
+    cursor: pointer;
+    margin-top: 100px;
+    margin-left: 10px;
+    margin-right: 10px;
+   
+}
+.formulario_Calculadora {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+    margin-top: 150px;
+
+}
+.formulario_Calculadora h2 {
+    margin-top: 50px;
+    font-family: 'Poppins';
+}
+
+/* Final Simulador */
+
+/* Tela Principal */
+
+/* final da Tela Principal */
