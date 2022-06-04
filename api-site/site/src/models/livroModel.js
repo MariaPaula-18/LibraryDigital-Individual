@@ -33,7 +33,6 @@ function cadastrar_principal(nomeLivro, dataLancamento, nomeAutor, editora) {
 }
 
 module.exports = {
-    
     cadastrar_principal,
-    listar,
+    listar
 };

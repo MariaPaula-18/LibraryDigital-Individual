@@ -27,6 +27,7 @@ function cadastrar(nome, dataNacs, email, senha) {
     var instrucao = `
     insert into usuario values 
     (null, '${nome}', '${dataNacs}' ,' ${email}' , '${senha}');   `;
+    
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
 }

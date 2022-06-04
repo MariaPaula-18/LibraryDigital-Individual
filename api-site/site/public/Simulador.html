@@ -39,21 +39,34 @@
         </div>
 
         <div class="container">
-            <div class="card">
-                <div class="formulario_Calculadora">
-                    <span class="tipo_campo">Insira o nome do livro: </span>
-                    <input class="input" id="ipt_livro">
-                    <span class="tipo_campo">  Insira a quantidade de páginas que tem o Livro: </span>
-                   <input class="input" id="ipt_pag" type="number">
-                   <span class="tipo_campo">  Insira em quanto dias você que ler ele: </span>
-                  <input id="ipt_tempo" class="input">
-                    <div class="botoes_direcao">
-                        <button class="botaoCalcular" onclick="registrar()">Registrar</button>
-                        <button class="botaoCalcular" onclick="mostrar()">Mostrar</button>
-                    </div>
-                    <div id="div_mgs" style="display: none;"></div>
-                </div>
+            <!-- <div class="card"> -->
+            <div class="formulario_Calculadora" ">
+                <span class="tipo_campo">Insira o nome do livro: </span>
+                <input class="input" id="ipt_livro">
+                <button class="botaoCalcular" onclick="registrar()">Registrar</button>
+
+
+                <span class="tipo_campo"> Insira a quantidade de páginas que tem o Livro: </span>
+                <input class="input" id="ipt_pag" type="number">
+
+
+                <span class="tipo_campo"> Insira em quanto dias você que ler ele: </span>
+                <select id="slc_temp">
+                    <option value="0">--Escolha--</option>
+                    <option value="1">Um Final de Semana </option>
+                    <option value="2">Uma Semana </option>
+                    <option value="3">Um Mês</option>
+                    <option value="4">Um ano</option>
+                </select>
+
+                <!-- <div class="botoes_direcao"> -->
+
+                    <button class="botaoCalcular" onclick="calcular()">Calcular</button>
+
+                <!-- </div> -->
+                <div id="div_mgs" ></div>
             </div>
+            <!-- </div> -->
         </div>
 
 
@@ -69,34 +82,68 @@
 <script>
     var livros = [];
 
+    var livro = ipt_livro.value;
+    var pag = ipt_pag.value;
+    var tempo = slc_temp.value;
+    var conta = 0;
+
     function registrar() {
-        var livro = ipt_livro.value;
-        var pag = ipt_pag.value;
-        var tempo = ipt_tempo.value;
-        var conta = 0;
 
-        livros.push(livro);
+        livros.push(ipt_livro.value);
+        livro = '';
+        pag = '';
 
-        if (livro == '' || pag == '' || tempo == '') {
-            alert('ERRO - Digite alguma coisa');
-        } else {
 
-            if (tempo <= 7) {
-                if (pag <= 100) {
-                    conta = pag / tempo;
-                }
-                else if (pag > 100 && pag <= 600) {
-                    conta = pag / tempo;
-                }
-                else if (pag > 600) {
-                    conta = pag / tempo;
-                }
-            }
-            else if (tempo) {
+    }
+    function calcular() {
+
+        // formulario_Calculadora.style.display = 'none'
+
+        if (tempo == 1) {
+            conta = pag / 2;
+
+            for (var contador = 0; contador < 2; contador++) {
+                // div_mgs.style.display = 'block'
+                div_mgs.innerHTML += ` O cronograma de leituro do livro ${livros[0]} é: <br>
+                ${contador} dia : ${conta.toFixed(1)} `;
 
             }
         }
+        else if (tempo == 2) {
+            conta = pag / 7;
+            // div_mgs.style.display = 'block'
+            for (var contador = 0; contador < 7; contador++) {
+
+                div_mgs.innerHTML += ` O cronograma de leituro do livro ${livros[0]} é: <br>
+                ${contador} dia : ${conta.toFixed(1)} `;
+
+            }
+        }
+        else if (tempo == 3) {
+            conta = pag / 30;
+            // div_mgs.style.display = 'block'
+            for (var contador = 0; contador < 30; contador++) {
+
+                div_mgs.innerHTML += ` O cronograma de leituro do livro ${livros[0]} é: <br>
+                ${contador} dia : ${conta.toFixed(1)} `;
+
+            }
+        }
+        else if (tempo == 4 ) {
+            
+            conta = pag / 365;
+            // div_mgs.style.display = 'block'
+            for (var contador = 0; contador < 365; contador++) {
+
+                div_mgs.innerHTML += ` O cronograma de leituro do livro ${livros[0]} é: <br>
+                 ${contador} dia : ${conta.toFixed(1)} `;
+            
+            }
+        }
     }
+
+
+
 
 
 </script>

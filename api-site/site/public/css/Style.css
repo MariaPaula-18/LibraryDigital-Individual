@@ -103,7 +103,7 @@ body {
     padding: 10px;
 }
 
-.contato2{
+.contato2 {
     padding-top: 9px;
     padding-bottom: 9px;
     padding-left: 20px;
@@ -119,6 +119,7 @@ body {
     cursor: pointer;
     border: none;
 }
+
 .cadastro {
     padding-top: 9px;
     padding-bottom: 9px;
@@ -278,7 +279,7 @@ body {
     font-family: 'Poppins';
     font-weight: 400;
     font-size: 20px;
-    
+
 }
 
 
@@ -436,10 +437,11 @@ body {
     margin-top: 200px;
 }
 
-.card_cadastro .contairner{
+.card_cadastro .contairner {
     align-items: center;
     justify-content: center;
 }
+
 .cadastro-entra {
     padding-top: 9px;
     padding-bottom: 9px;
@@ -453,9 +455,9 @@ body {
     font-size: 16px;
     align-items: center;
     justify-content: space-evenly;
-    cursor: pointer; 
-    margin-top:50px ;
-    
+    cursor: pointer;
+    margin-top: 50px;
+
 }
 
 /* fim do cadastro*/
@@ -534,16 +536,18 @@ ul {
 }
 
 /* Simulador */
-#div_mgs{
-   width: 30px;
-   height: 20px;
+#div_mgs {
+    width: 30px;
+    height: 20px;
 
 }
-.botoes_direcao{
-display: flex;
-flex-direction: row;
+
+.botoes_direcao {
+    display: flex;
+    flex-direction: row;
 }
-.botaoCalcular{
+
+.botaoCalcular {
     width: 150px;
     height: 40px;
     background-color: #D2B48C;
@@ -558,24 +562,69 @@ flex-direction: row;
     margin-top: 100px;
     margin-left: 10px;
     margin-right: 10px;
-   
+
 }
+
 .formulario_Calculadora {
     display: flex;
     flex-direction: column;
     margin: 0;
     justify-content: center;
     align-items: center;
-    margin-top: 150px;
+    margin-top: 50px;
 
 }
+
 .formulario_Calculadora h2 {
-    margin-top: 50px;
+
     font-family: 'Poppins';
 }
 
 /* Final Simulador */
 
 /* Tela Principal */
+.biblioteca {
+    background-image: url(https://pbs.twimg.com/media/DAz4sI_XcAA3Z0u.jpg);
+    background-size: cover;
+    overflow-x: hidden;
+    opacity: 0.5;
+    width: 100%;
+    height: 600px;
+
+}
+
+.dash {
+    background-color: #D2B48C;
+    width: 100%;
+    height: 600px;
+}
+
+.simulador {
+    background-image: url(https://pbs.twimg.com/media/DAz4sI_XcAA3Z0u.jpg);
+    background-size: cover;
+    overflow-x: hidden;
+    opacity: 0.5;
+    width: 100%;
+    height: 600px;
+}
+
+.texto_inicial {
+    text-align: center;
+    font-family: 'Poppins';
+    font-size: 40px;
+    color: #000;
+    opacity: 1;
+
+
+}
+
+.inicial a {
+    margin: auto;
+    align-self: center;
+    align-items: center;
+    text-decoration: none;
+    color: #000;
+    cursor: pointer;
+}
 
 /* final da Tela Principal */

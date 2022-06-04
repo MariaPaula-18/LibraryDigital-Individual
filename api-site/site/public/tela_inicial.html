@@ -29,33 +29,43 @@
                 </ul>
             </div>
         </div>
-        <div class="container" >
-            <div class="card_cadastro" >
-    
-                <div class="formulario">
-                    <h2> Cadastre seu livro aqui!</h2>
-    
-                    <span class="tipo_campo">Nome do Livro:</span>
-                    <input class="input" id="ipt_nome_livro">
-    
-                    <span class="tipo_campo">Data de Lancamento:</span>
-                    <input class="input" id="ipt_data_de_lancamento" type="date">
-    
-                    <span class="tipo_campo">Autor:</span>
-                    <input class="input" id="ipt_autor" >
-    
-                    <span class="tipo_campo">Editora:</span>
-                    <input class="input" id="ipt_editora" >
-    
-                   
-    
-                  <a href="Login.html">  <button class="cadastro-entra" onclick="cadastrar_principal()">Cadastrar</button></a>
-    
+
+<div class="inicial">
+
+        <a href="biblioteca.html">
+        <div class="biblioteca">
+             <div class="container">
+                 <div class="texto_inicial">
+                   <h2>VEJA  SUA BIBLIOTECA</h2>
                 </div>
             </div>
         </div>
+    </a>
 
 
+    <a href="dashbord.html">
+            <div class="dash">
+                <div class="container"></div>
+                   <div class="texto_inicial">
+                  <h2>ACOMPANHE SUAS LEITURAS</h2>
+                  </div>
+                </div>
+            </div>
+      </a>
+
+
+      <a href="Simulador.html">
+            <div class="simulador">
+                <div class="container"></div>
+                    <div class="texto_inicial">
+                       <h2>CALCULE AQUI QUANTO TEMPO VAI DEMORAR SUAS LEITURAS</h2>
+                    </div>
+                </div>
+           </div>
+      </a>
+
+
+</div>
 
         <div class="footer">
             <div class="container">
@@ -78,7 +88,7 @@
         
   
 
-        fetch("/livros", {
+        fetch("/livros/cadastrar_principal", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -98,7 +108,7 @@
 
             if (resposta.ok) {
                /*  cardErro.style.display = "block"; */
-                
+                alert ('ok')
                 // finalizarAguardar();
             } else {
                 throw ("Houve um erro ao tentar realizar o cadastro!");
