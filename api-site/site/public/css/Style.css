@@ -681,7 +681,7 @@ ul {
     display: flex;
     align-items: center;
     font-size: 3vh;
-    margin-left: 38vh;
+    margin-left: 32vh;
 }
 
 .circulo_2{
@@ -692,7 +692,7 @@ ul {
     display: flex;
     align-items: center;
     font-size: 3vh;
-    margin-left: 45vh;
+    margin-left: 50vh;
 }
 
 .circulo_3{
@@ -703,7 +703,13 @@ ul {
     display: flex;
     align-items: center;
     font-size: 3vh;
-    margin-left: 45vh;
+    margin-left: 50vh;
+}
+.circulo_4{
+    border-radius: 65vh;  
+    height: 10vh;
+    width: 10vh;
+    margin: 0;
 }
 
 .circulos{
