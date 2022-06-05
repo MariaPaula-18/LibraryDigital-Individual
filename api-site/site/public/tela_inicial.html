@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,8 +9,10 @@
     <link rel="stylesheet" href="css/Style.css">
     <link rel="icon" href="assets/img/logo_oficial.png">
 </head>
+
 <body>
-    <body >
+
+    <body>
         <div class="header">
             <div class="header_img">
                 <a href="Index.html"><img class="logo" src="assets/img/logo_oficial.png"></a>
@@ -20,7 +23,7 @@
                         <ul class="ulsobre">
                             <li> <a href="#sobreprojeto">Sobre o Projeto</a></li>
                             <li> <a href="#sobremim">Sobre Mim</a></li>
-    
+
                         </ul>
                     </li>
                     <li> <a href="#contato3"><button class="contato2">Contato</button></a></li>
@@ -30,63 +33,89 @@
             </div>
         </div>
 
-<div class="inicial">
+        <div class="inicial">
 
-        <a href="biblioteca.html">
-        <div class="biblioteca">
+            <!-- <a href="biblioteca.html">
+
              <div class="container">
                  <div class="texto_inicial">
                    <h2>VEJA  SUA BIBLIOTECA</h2>
                 </div>
             </div>
         </div>
-    </a>
+    </a> -->
 
 
-    <a href="dashbord.html">
-            <div class="dash">
+            <a href="dashbord.html">
+                <div class="dash">
+                    <div class="container"></div>
+                    <div class="texto_inicial">
+                        <!-- <h2>ACOMPANHE SUAS LEITURAS</h2> -->
+                        <div class="caixa">
+                            Veja sua biblioteca
+                        </div>
+                        <div class="caixa">
+                            Acompanhe suas leituras
+                        </div>
+                        <div class="caixa">
+                            Calcule o tempo de leitura
+                        </div>
+                    </div>
+                    <div class="circulos">
+                        <div class="circulo_1"></div>
+                        <div class="circulo_2"></div>
+                        <div class="circulo_3"></div>
+                        </div>
+                </div>
+        </div>
+        </a>
+
+
+            <div class="biblioteca">
                 <div class="container"></div>
-                   <div class="texto_inicial">
-                  <h2>ACOMPANHE SUAS LEITURAS</h2>
-                  </div>
+                <div class="texto_inicial">
+                    Sua biblioteca:
+                </div>
+                <div class="livros">
+                    <div class="livro"> <a href="biblioteca.html">+</a> </div>
+                    <div class="livro"></div>
+                    <div class="livro"></div>
+                    <div class="livro"></div>
+                    <div class="livro"></div>
+                    <div class="livro"></div>
+                    <div class="livro"></div>
+                    <div class="livro"></div>
+                    <div class="livro"></div>
+                    <div class="livro"></div>
+                    <div class="livro"></div>
+                    <div class="livro"></div>
                 </div>
             </div>
-      </a>
 
 
-      <a href="Simulador.html">
-            <div class="simulador">
-                <div class="container"></div>
-                    <div class="texto_inicial">
-                       <h2>CALCULE AQUI QUANTO TEMPO VAI DEMORAR SUAS LEITURAS</h2>
-                    </div>
-                </div>
-           </div>
-      </a>
-
-
-</div>
+        </div>
 
         <div class="footer">
             <div class="container">
                 <p> Copyright &copy Onde Upon Time | Todos os direitos reservados 2022.</p>
             </div>
         </div>
-    
-</body>
+
+    </body>
+
 </html>
 <script>
 
-    
+
     function cadastrar() {
-       
-        var nomeLivro =ipt_nome_livro.value;
+
+        var nomeLivro = ipt_nome_livro.value;
         var dataLancamento = ipt_data_de_lancamento.value;
         var autor = ipt_autor.value;
         var editora = ipt_editora.value;
 
-        
-  
+
+
 
         fetch("/livros/cadastrar_principal", {
             method: "POST",
@@ -99,16 +128,16 @@
                 nomeLivroServer: nomeLivro,
                 dataLancamentoServer: dataLancamento,
                 autorServer: autor,
-                editoraServer:editora
+                editoraServer: editora
             })
         }).then(function (resposta) {
 
             console.log("resposta: ", resposta);
-        
+
 
             if (resposta.ok) {
-               /*  cardErro.style.display = "block"; */
-                alert ('ok')
+                /*  cardErro.style.display = "block"; */
+                alert('ok')
                 // finalizarAguardar();
             } else {
                 throw ("Houve um erro ao tentar realizar o cadastro!");

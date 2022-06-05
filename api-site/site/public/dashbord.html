@@ -1,12 +1,141 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="css/Style.css">
+    <link rel="icon" href="assets/img/logo_oficial.png">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
+
 <body>
-    
-</body>
+
+    <body>
+        <div class="header">
+            <div class="header_img">
+                <a href="Index.html"><img class="logo" src="assets/img/logo_oficial.png"></a>
+            </div>
+            <div class="nav">
+                <ul class="nav">
+                    <li class="lisobre"><a>Sobre</a>
+                        <ul class="ulsobre">
+                            <li> <a href="#sobreprojeto">Sobre o Projeto</a></li>
+                            <li> <a href="#sobremim">Sobre Mim</a></li>
+
+                        </ul>
+                    </li>
+                    <li> <a href="#contato3"><button class="contato2">Contato</button></a></li>
+                    <li><a href="Login.html"><button class="login">Entrar</button></a></li>
+                    <li><a href="Cadastro.html"><button class="cadastro">Cadastrar-se</button></a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="inicial">
+            <div class="grafico" id="grafico">
+                <div class="texto_dash" id="texto_dash">
+                    <p class="frase">Páginas <b>semanais</b>:</p>
+                </div>
+                <div class="container_dash" id="container_dash">
+
+                    <div style="position: relative; height:40vh; width:40vw">
+                        <canvas id="myChart" class="myChart"></canvas>
+                    </div>
+                    <div class="espaco_textos" id="espaco_textos">
+                        <div class="texto" id="texto">
+                            <p class="frase">Livros <b>mensais</b>:</p>
+                        </div>
+                    </div>
+                    <div class="container_2" id="container_2">
+                        <div style="position: relative; height:40vh; width:40vw;">
+                            <canvas id="myChart_2" class="myChart_2" ;></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="container">
+                <p> Copyright &copy Onde Upon Time | Todos os direitos reservados 2022.</p>
+            </div>
+        </div>
+
+    </body>
+
 </html>
+
+<script>
+    const labels = [
+        'Janeiro',
+        'Fevereiro',
+        'Março',
+        'Abril',
+        'Maio',
+        'Junho',
+        'Julho',
+        'Agosto',
+        'Setembro',
+        'Outubro',
+        'Novembro',
+        'Dezembro',
+    ];
+
+    const data = {
+        labels: labels,
+        datasets: [{
+            label: '',
+            backgroundColor: ['#f7debd',
+                'wheat',
+                '#D2B48C'
+            ],
+            borderColor: 'rgb(255, 99, 132)',
+            data: [9, 2, 5, 1, 7, 2, 10, 3, 1, 5, 4, 11],
+        }]
+    };
+
+    const labels2 = [
+        'Segunda',
+        'Terça',
+        'Quarta',
+        'Quinta',
+        'Sexta',
+        'Sábado',
+        'Domingo',
+    ];
+
+    const data2 = {
+        labels: labels2,
+        datasets: [{
+            label: 'Acessos',
+            backgroundColor: '#D2B48C',
+            borderColor: '#D2B48C',
+            data: [5, 12, 7, 50, 30, 70, 90],
+        }]
+    };
+
+    const config = {
+        type: 'bar',
+        data: data,
+        options: {}
+    };
+
+    const config2 = {
+        type: 'line',
+        data: data2,
+        options: {}
+    };
+
+    const myChart = new Chart(
+        document.getElementById('myChart'),
+        config
+    );
+
+    const myChart2 = new Chart(
+        document.getElementById('myChart_2'),
+        config2
+    );
+</script>
