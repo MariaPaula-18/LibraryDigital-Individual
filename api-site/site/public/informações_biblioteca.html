@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body onload="verificarLivro(101)">
+
+
+    <div id="mostrar_informacoes" style="border: 3px solid pink ;">
+
+    </div>
+
+</body>
+
+</html>
+<script>
+    function verificarLivro(idLivro) {
+
+
+        fetch(`/medidas/ultimas/${idLivro}`, { cache: 'no-store' }).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (resposta) {
+                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                    resposta.reverse();
+
+                    plotarGrafico(resposta, idLivro);
+                });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
+            }
+        })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+            });
+    }
+    function plotarGrafico(resposta, idLivro) {
+        console.log('iniciando plotagem do gráfico...');
+
+       
+        for (i = 0; i < resposta.length; i++) {
+            var registro = resposta[i];
+        
+
+            mostrar_informacoes.innerHTML+=
+            `Nome do Livro: ${registro.nomeLivro} <br>
+            Data de Lançamento: ${registro.momento } <br>
+            Autor: ${registro.nomeAutor}<br>
+            Editor:${registro.editora}<br> `;
+        }
+
+        console.log(JSON.stringify(dados));
+
+
+    }
+</script>

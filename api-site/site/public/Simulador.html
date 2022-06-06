@@ -28,10 +28,11 @@
                         </ul>
                     </li> -->
                     <li> <a href="tela_inicial.html"><button class="contato2">Home</button></a></li>
-                 
+
                     <li><a href="Index.html"><button class="login">Sair</button></a></li>
-                <img class="circulo_4" src="https://i.pinimg.com/originals/9c/34/21/9c34210a99470c27ef07f42af6c4a39c.jpg">
-                    
+                    <img class="circulo_4"
+                        src="https://i.pinimg.com/originals/9c/34/21/9c34210a99470c27ef07f42af6c4a39c.jpg">
+
                 </ul>
             </div>
         </div>
@@ -42,8 +43,8 @@
 
         <div class="container">
             <!-- <div class="card"> -->
-            <div class="formulario_Calculadora" ">
-                <span class="tipo_campo">Insira o nome do livro: </span>
+            <div class="formulario_Calculadora" >
+                <span class=" tipo_campo">Insira o nome do livro: </span>
                 <input class="input" id="ipt_livro">
                 <button class="botaoCalcular" onclick="registrar()">Registrar</button>
 
@@ -63,10 +64,10 @@
 
                 <!-- <div class="botoes_direcao"> -->
 
-                    <button class="botaoCalcular" onclick="calcular()">Calcular</button>
+                <button class="botaoCalcular" onclick="calcular()">Calcular</button>
 
                 <!-- </div> -->
-                <div id="div_mgs" ></div>
+                <div id="div_mgs" style="border: 3px solid blue; height: 100px; width: 100px; " ></div>
             </div>
             <!-- </div> -->
         </div>
@@ -84,10 +85,7 @@
 <script>
     var livros = [];
 
-    var livro = ipt_livro.value;
-    var pag = ipt_pag.value;
-    var tempo = slc_temp.value;
-    var conta = 0;
+
 
     function registrar() {
 
@@ -101,45 +99,51 @@
 
         // formulario_Calculadora.style.display = 'none'
 
+        var tempo = slc_temp.value;
+        var livro = ipt_livro.value;
+        var pag = ipt_pag.value;
+        var tempo = slc_temp.value;
+        var conta = 0;
+
         if (tempo == 1) {
             conta = pag / 2;
 
-            for (var contador = 0; contador < 2; contador++) {
+            for (var contador = 1; contador <= 2; contador++) {
                 // div_mgs.style.display = 'block'
                 div_mgs.innerHTML += ` O cronograma de leituro do livro ${livros[0]} é: <br>
-                ${contador} dia : ${conta.toFixed(1)} `;
+                ${contador} dia : ${conta.toFixed(0)} `;
 
             }
         }
         else if (tempo == 2) {
             conta = pag / 7;
             // div_mgs.style.display = 'block'
-            for (var contador = 0; contador < 7; contador++) {
+            for (var contador = 1; contador <= 7; contador++) {
 
                 div_mgs.innerHTML += ` O cronograma de leituro do livro ${livros[0]} é: <br>
-                ${contador} dia : ${conta.toFixed(1)} `;
+                ${contador} dia : ${conta.toFixed(0)} `;
 
             }
         }
         else if (tempo == 3) {
             conta = pag / 30;
             // div_mgs.style.display = 'block'
-            for (var contador = 0; contador < 30; contador++) {
+            for (var contador = 1; contador <= 30; contador++) {
 
                 div_mgs.innerHTML += ` O cronograma de leituro do livro ${livros[0]} é: <br>
-                ${contador} dia : ${conta.toFixed(1)} `;
+                ${contador} dia : ${conta.toFixed(0)} `;
 
             }
         }
-        else if (tempo == 4 ) {
-            
+        else if (tempo == 4) {
+
             conta = pag / 365;
             // div_mgs.style.display = 'block'
-            for (var contador = 0; contador < 365; contador++) {
+            for (var contador = 1; contador <=365; contador++) {
 
                 div_mgs.innerHTML += ` O cronograma de leituro do livro ${livros[0]} é: <br>
-                 ${contador} dia : ${conta.toFixed(1)} `;
-            
+                 ${contador} dia : ${conta.toFixed(0)} `;
+
             }
         }
     }

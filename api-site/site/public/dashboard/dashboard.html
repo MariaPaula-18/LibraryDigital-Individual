@@ -85,9 +85,9 @@
     let proximaAtualizacao;
 
     window.onload = obterDadosGrafico(1);
+   b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
 
-    b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
-
+ 
     verificar_autenticacao();
 
     function alterarTitulo(idAquario) {

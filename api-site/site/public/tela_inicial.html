@@ -12,7 +12,7 @@
 
 <body>
 
-    <body>
+    <body >
         <div class="header">
             <div class="header_img">
                 <a href="Index.html"><img class="logo" src="assets/img/logo_oficial.png"></a>
@@ -29,6 +29,7 @@
                     <li> <a href="tela_inicial.html"><button class="contato2">Home</button></a></li>
                     <li> <a href="#biblioteca"><button class="contato2">Biblioteca</button></a></li>
                     <li><a href="Index.html"><button class="login">Sair</button></a></li>
+                    <li id="nome_usuario"></li>
                 <img class="circulo_4" src="https://i.pinimg.com/originals/9c/34/21/9c34210a99470c27ef07f42af6c4a39c.jpg">
                     
                 </ul>
@@ -79,7 +80,7 @@
                 </div>
                 <div class="livros">
                     <div class="livro"> <a href="biblioteca.html">+</a> </div>
-                    <div class="livro"></div>
+                    <div class="livro"><a href="kawasalvador.html"><img src="https://images-na.ssl-images-amazon.com/images/I/81aQ-osTBXL.jpg " class="img_livro"></a></div>
                     <div class="livro"></div>
                     <div class="livro"></div>
                     <div class="livro"></div>
@@ -107,6 +108,7 @@
 </html>
 <script>
 
+nome_usuario.innerHTML= sessionStorage.NOME_USUARIO ;
 
     function cadastrar() {
 

@@ -99,9 +99,60 @@ function cadastrar(req, res) {
     }
 }
 
+// função do livro
+
+function cadastrar_principal(req, res) {
+    // Crie uma variável que vá recuperar os valores do arquivo cadastro.html
+    var nomeLivro = req.body.nomeLivroServer;
+    var dataLancamento = req.body.dataLancamentoServer;
+    var nomeAutor = req.body.autorServer;
+    var editora = req.body.editoraServer;
+
+    // var fkUsuario = req.body.fkUsuarioServer;
+    // var fkLivro = req.body.fkLivroServer;
+    // var qtdPaginas = req.body.qtdPaginasServer;
+    // var dataEntrada = req.body.dataEntradaServer;
+
+
+    // Faça as validações dos valores
+
+
+    // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
+    usuarioModel.cadastrar_principal(nomeLivro, dataLancamento, nomeAutor, editora )
+      
+                .then(
+                    function (resultado) {
+                        res.json(resultado)
+                    }
+                ).catch(
+                    function (erro) {
+                        console.log(erro);
+                        console.log(
+                            "\nHouve um erro ao realizar o cadastro! Erro: ",
+                            erro.sqlMessage
+                        );
+                        res.status(500).json(erro.sqlMessage);
+                    }
+                );
+            
+        // .catch(
+        //     function (erro) {
+        //         console.log(erro);
+        //         console.log(
+        //             "\nHouve um erro ao realizar o cadastro! Erro: ",
+        //             erro.sqlMessage
+        //         );
+        //         res.status(500).json(erro.sqlMessage);
+        //     }
+        // );
+        
+}
+
+
 module.exports = {
     entrar,
     cadastrar,
     listar,
-    testar
+    testar, 
+    cadastrar_principal
 }
